@@ -7,18 +7,34 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\Session\Session;
+
+
 
 class LoginController extends AbstractController
 {
+
+    private $session ;
+
+    public function __construct()
+    {
+         $this->session= new Session();
+    }
+
     #[Route('/login', name: 'login')]
     public function index(Request $request): Response
     {
+        if($this -> session->get('id')!==-1 && $this->session->get('id')!==null){
+            return $this->redirectToRoute('home');
+        }
+
         $errorMessage= $request->query->get('error');
         $successMessage = $request->query->get('success');
         return $this->render('login/index.html.twig', [
             'controller_name' => 'LoginController',
             'errorMessage'=> $errorMessage,
-            'successMessage'=> $successMessage 
+            'successMessage'=> $successMessage ,
+            'sessionid' => $this->session->get('id')
         ]);
     }
 
@@ -31,6 +47,7 @@ class LoginController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(User::class);
         $search = $repo->findOneBy(['email'=>$email]);
         if( $search != null && $password == $search->getPassword()){
+            $this->session->set('id',$search->getEmail());
             return $this->redirect('/home');
         }
         else{
@@ -54,6 +71,11 @@ class LoginController extends AbstractController
         $password = $request->request->get('pwd');
         $repeat = $request->request->get('repeat');
 
+        $repo = $this ->getDoctrine()->getRepository(User::class);
+        if($repo->findOneBy(['email'=>$email])){
+            return $this->redirectToRoute('signup',['error'=>'email already used']);
+        }
+
         if($password != $repeat)
             return $this->redirectToRoute('signup',['error'=>'passwords do not correspond']);
 
@@ -66,6 +88,13 @@ class LoginController extends AbstractController
 
         return $this->redirectToRoute('login',['success'=>'you have signed.']);
 
+    }
+
+    #[Route("/logout",name:"name")]
+    public function logout(): Response
+    {
+        $this->session->set('id',-1);
+        return $this->redirectToRoute('login');
     }
 
 }

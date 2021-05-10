@@ -50,9 +50,11 @@ body::after{
 
 .errorMessage {
     color: red ; 
+    font-size: 0.85rem;
 }
 .successMessage{
     color : green; 
+    font-size: 0.85rem;
 }
 button[type="submit"]{
     margin-right: 20px;
@@ -63,4 +65,5 @@ button[type="submit"]{
 }
 #signup:hover{
     background: rgb(7, 163, 7) ;
-}
+} 
+
