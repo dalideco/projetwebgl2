@@ -32,7 +32,7 @@
                 <div class="circle"></div>
                 <div class="circle"></div>
             </div>
-            <ul class="column-flex">
+            <ul class="column-flex navUl">
                 <li class="current"><h3>Map</h3></li>
                 <li><h3>Contact</h3></li>
                 <li><h3>About Us</h3></li>
@@ -41,9 +41,32 @@
     </nav>
 
     <div class="my-container">
+        <div class="topBar">
+            <button  class="topButton profileButton">
+                <text>dalideco@gmail.com</text>
+                <img src="images/utilities/arrow.png" ></img>
+            </button>
+            <ul >
+                <li>
+                    <a href="/logout">
+                    Log Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            let myUlShown= false;
+            const profileButton= document.querySelector('.topBar .topButton');
+            const myUl = document.querySelector('.topBar ul')
+            profileButton.onclick=()=>{
+                myUlShown = !myUlShown;
+                myUl.style.transform=myUlShown?'none':'scaleY(0)';
+            }
+        </script>
         
-        <a href="/logout" class="logOutButton">
-            Log out
+        <a href="/signup" class="signUpButton topButton topBar">
+            Sign Up
         </a>
         
 

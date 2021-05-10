@@ -98,3 +98,5 @@ function settingNavBar(){
 }
 settingNavBar();
 
+
+//loggin out
