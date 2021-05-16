@@ -1,5 +1,7 @@
 .liSvg svg{
     margin-right: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .my-container >svg{
@@ -31,6 +33,7 @@
     transform: rotate(-10deg);
 
 }
+
 
 @keyframes play{
     100%{

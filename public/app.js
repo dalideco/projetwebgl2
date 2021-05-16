@@ -12,7 +12,7 @@ const [myMap,contactForm, aboutUs]=pageTable;
 //deciding the the checks per second 
 
 const framePassed= function(callback){
-    window.setTimeout(callback,1000/30);
+    window.setTimeout(callback,1000/10);
 }
 
 
@@ -80,10 +80,7 @@ function settingNavBar(){
     const [myMapPosition,contactFormPosition,aboutUsPosition] = 
         pageTable.map(element=> element.getBoundingClientRect());
     
-    
     if(aboutUsPosition.top<=window.innerHeight/2){
-
-        
         changeCurrent(2);
     }
     else if(contactFormPosition.top<=window.innerHeight/2){
