@@ -27,8 +27,6 @@ const changeCurrent = (i)=> {
     myCircles[i].classList.add("current");
 }
 
-
-
 //adding nav animation
 for(let i =0; i<myLis.length; i++){
     myLis[i].addEventListener('mouseover',()=>{
