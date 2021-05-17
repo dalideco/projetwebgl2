@@ -17,9 +17,11 @@
     </nav>
 
     <div class="my-container">
+
+        {% if logged %}
         <div class="topBar">
             <button  class="topButton profileButton">
-                <span>dalideco@gmail.com</span>
+                <span>{{mail}}</span>
                 <img src="images/utilities/arrow.png" >
             </button>
             <ul >
@@ -31,19 +33,13 @@
             </ul>
         </div>
 
-        <script>
-            let myUlShown= false;
-            const profileButton= document.querySelector('.topBar .topButton');
-            const myUl = document.querySelector('.topBar ul')
-            profileButton.onclick=()=>{
-                myUlShown = !myUlShown;
-                myUl.style.transform=myUlShown?'none':'scaleY(0)';
-            }
-        </script>
+        {%else%}
         
-        <a href="/signup" class="signUpButton topButton topBar">
-            Sign Up
+        <a href="/login" class="signUpButton topButton topBar">
+            Sign In
         </a>
+
+        {%endif%}
         
 
 
@@ -131,24 +127,105 @@
         <div class= "aboutUs">
             <div class="aboutUs-container" data-aos="fade-up">
                 <div class="card">
-                    <img src="images_AboutUs\dali.jpg" alt="">
-                    <h3>Dali Sahnoun</h3>
-                    <p>etudiant gl2 insat</p>
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images_AboutUs\dali.jpg" alt="">
-                    <h3>Dali Sahnoun</h3>
-                    <p>etudiant gl2 insat</p>
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images_AboutUs\dali.jpg" alt="">
-                    <h3>Dali Sahnoun</h3>
-                    <p>etudiant gl2 insat</p>
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images_AboutUs\dali.jpg" alt="">
-                    <h3>Dali Sahnoun</h3>
-                    <p>etudiant gl2 insat</p>
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background-image: url('images/persons/dope.jpeg')">
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,5 +266,7 @@
 
     <script src="app.js"></script>
     <script src="aos/init.js"></script>
+    <script src="js/topButtons.js"></script>
+    <script src="js/svgColor.js"></script>
 </body>
 </html>

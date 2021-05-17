@@ -97,4 +97,18 @@ class LoginController extends AbstractController
         return $this->redirectToRoute('login');
     }
 
+
+    #[Route('/home', name: 'home')]
+    public function home(): Response
+    {
+
+        $logged = ($this -> session->get('id')!==-1 && $this->session->get('id')!==null);
+        
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+            'logged' => $logged,
+            'mail'=> $this->session->get('id')
+        ]);
+    }
+
 }
