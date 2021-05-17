@@ -147,6 +147,12 @@ nav:hover ul{
     transform: scale(1.4);
 ;}
 
+@media(max-width:570px){
+    .navUl h3{
+        font-size: 14px;
+    }
+}
+
 /*containing*/
 
 .my-container{
@@ -396,7 +402,7 @@ nav:hover ul{
     
     color:white;
     transition: background-color 300ms ease-in-out;
-    display: none;
+   
     
 }
 

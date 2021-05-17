@@ -19,8 +19,8 @@
     <div class="my-container">
         <div class="topBar">
             <button  class="topButton profileButton">
-                <text>dalideco@gmail.com</text>
-                <img src="images/utilities/arrow.png" ></img>
+                <span>dalideco@gmail.com</span>
+                <img src="images/utilities/arrow.png" >
             </button>
             <ul >
                 <li>
@@ -53,7 +53,7 @@
                 {% include "/home/mySvg.html.twig" %}
 
                 {# this is the ul #}
-                <ul>
+                <ul data-aos="fade-left">
                     
                     <li class="liSvg">
                         <a href="#">
@@ -86,7 +86,7 @@
         <div id="contact">
             <div class="bg-contact100" style="background-image: url('images_ContactForm/bg.jpg');">
                 <div class="container-contact100">
-                    <div class="wrap-contact100">
+                    <div class="wrap-contact100" data-aos="zoom-in">
                         <div class="contact100-pic js-tilt" data-tilt>
                             <img src="images_ContactForm/img.jpg">
                         </div>
@@ -129,7 +129,7 @@
         </div>
 
         <div class= "aboutUs">
-            <div class="aboutUs-container">
+            <div class="aboutUs-container" data-aos="fade-up">
                 <div class="card">
                     <img src="images_AboutUs\dali.jpg" alt="">
                     <h3>Dali Sahnoun</h3>
@@ -188,5 +188,6 @@
 
 
     <script src="app.js"></script>
+    <script src="aos/init.js"></script>
 </body>
 </html>
