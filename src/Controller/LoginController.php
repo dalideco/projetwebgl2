@@ -47,6 +47,7 @@ class LoginController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(User::class);
         $search = $repo->findOneBy(['email'=>$email]);
         if( $search != null && $password == $search->getPassword()){
+
             $this->session->set('id',$search->getEmail());
             return $this->redirect('/home');
         }
@@ -109,6 +110,13 @@ class LoginController extends AbstractController
             'logged' => $logged,
             'mail'=> $this->session->get('id')
         ]);
+    }
+
+
+    #[Route('/', name: '')]
+    public function no_route(): Response
+    {
+        return $this -> redirectToRoute('home');
     }
 
 }
