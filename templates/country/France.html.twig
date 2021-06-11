@@ -1,4 +1,4 @@
-!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yummyyy</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/icecreamsStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icecreamsStyle.css">
 
 </head>
 
@@ -15,12 +15,40 @@
 
 <div class="slides_container spicy">
     <div class="slides">
-        <input tabindex="-1" type="radio" id="trigger1" name="slider" checked autofocus />
+
+
+        {% for recipe in spicy %}
+
+            {% if loop.first %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider" checked autofocus  />
+                <label for={{"trigger"~loop.index}}></label>
+            {% endif %}
+
+            {% if not loop.last and not loop.first %}
+            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider"   />
+            <label for={{"trigger"~loop.index}}></label>
+            {% endif %}
+
+
+
+            <div class="slide img2" style={{"background-image: url('"~recipe.url~"')"}}>
+                <div class="hovereffect ">
+
+                    <div class="overlay">
+                        <h2 class="title">Pates au poireau et champignons</h2>
+                        <button id="myBtn" href="myModal2">Open Modal</button>
+                    </div>
+                    <!-- Modal  -->
+                </div>
+            </div>
+        {% endfor %}    
+
+        {# <input tabindex="-1" type="radio" id="trigger1" name="slider" checked autofocus />
         <label for="trigger1"></label>
 
         <div class="slide  ">
             <div class="hovereffect ">
-                <div class="img1 img-responsive"></div>
+                <div class="img1 img-responsive" style="background-image: url('ImagesFood/pic4.jpg');"></div>
                 <div class="overlay">
 
                     <h2 class="title">Pates au poireau et champignons</h2>
@@ -67,7 +95,7 @@
                     <button id="myBtn" href="myModal4">Open Modal</button>
                 </div>
             </div>
-        </div>
+        </div> #}
 
 
         <!-- <input type="radio" id="trigger4" name="slider"
@@ -147,7 +175,7 @@
     <div id="icecream">
         <div class="svg">
 
-            {% include "icecream.html.twig"%}
+            {% include "country/icecream.html.twig"%}
              </div>
 
     </div>
@@ -212,7 +240,7 @@
 
     <script src="modal.js"></script>
     <script src="app.js"></script>
-    <script src="icecreamLayer.js"></script>
+    <script src="js/recipes.js"></script>
 </div>
 </body>
 
