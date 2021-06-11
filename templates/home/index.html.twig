@@ -1,0 +1,282 @@
+{% include "/home/header.html.twig" %}
+<body>
+    
+    <nav>
+        <div class="row-flex">
+            <div class="line column-flex">
+                <div class="circle current"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <ul class="column-flex navUl">
+                <li class="current"><h3>Map</h3></li>
+                <li><h3>Contact</h3></li>
+                <li><h3>About Us</h3></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="my-container">
+
+        {% if logged %}
+        <div class="topBar">
+            <button  class="topButton profileButton">
+                <span>{{mail}}</span>
+                <img src="images/utilities/arrow.png" >
+            </button>
+            <ul >
+                <li>
+                    <a href="/logout">
+                    Log Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        {%else%}
+        
+        <a href="/login" class="signUpButton topButton topBar">
+            Sign In
+        </a>
+
+        {%endif%}
+        
+
+
+        <div class="myMap">
+            <div class="my-container">
+                {# this is the svg #}
+                {% include "/home/mySvg.html.twig" %}
+
+                {# this is the ul #}
+                <ul data-aos="fade-left">
+                    
+                    <li class="liSvg">
+                        <a href="#">
+                        {% include "/home/tunisiaSvg.html.twig" %}
+                        <div>Tunisia<div>
+                        </a>
+                    </li>
+                    <li class="liSvg">
+                        <a href="#">
+                        {% include "/home/franceSvg.html.twig" %}
+                        <div>France<div>
+                        </a>
+                    </li>
+                    <li class="liSvg">
+                        <a href="#">
+                        {% include "/home/spainSvg.html.twig" %}
+                        <div><a href="#">Spain</a><div>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            
+        </div>
+
+
+
+
+        <div id="contact">
+            <div class="bg-contact100" style="background-image: url('images_ContactForm/bg.jpg');">
+                <div class="container-contact100">
+                    <div class="wrap-contact100" data-aos="zoom-in">
+                        <div class="contact100-pic js-tilt" data-tilt>
+                            <img src="images_ContactForm/img.jpg">
+                        </div>
+
+                        <form class="contact100-form validate-form">
+                            <span class="contact100-form-title">
+                                Get in touch
+                            </span>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Name is required">
+                                <input class="input100" type="text" name="name" placeholder="Name">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="text" name="email" placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                                <textarea class="input100" name="message" placeholder="Message"></textarea>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="container-contact100-form-btn">
+                                <button class="contact100-form-btn">
+                                    Send
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class= "aboutUs">
+            <div class="aboutUs-container" >
+                <div data-aos="fade-up">
+                    <div class="card" style="background-image: url('images/persons/dalideco.jpeg')">
+                        <div class="overlay">
+                            
+                        </div>
+                        <div class="content">
+                            <div class="lineDope"></div>
+                            <h1>Mohamed Ali Sahnoun</h1>
+                            <div class="parag">
+                                <h2>dsahnoun28@yahoo.fr</h2>
+                                <p>Lorem Ipsum Lorem Ipsum</p>
+                                
+                                <div class="icons">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" >
+                    <div class="card" style="background-image: url('images/persons/ali.jpeg')">
+                        <div class="overlay">
+                            
+                        </div>
+                        <div class="content">
+                            <div class="lineDope"></div>
+                            <h1>Ali Doggaz</h1>
+                            <div class="parag">
+                                <h2>ali@ali.ali</h2>
+                                <p>Lorem Ipsum Lorem Ipsum</p>
+                                
+                                <div class="icons">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                <div class="card" style="background-image: url('images/persons/alaa.jpeg')">
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Alaa cherif</h1>
+                        <div class="parag">
+                            <h2>alaa@alaa.alaa</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                <div class="card" style="background-image: url('images/persons/nadine.jpeg')">
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Nadine Boukadida</h1>
+                        <div class="parag">
+                            <h2>nads@nads.nads</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                <div class="card" style="background-image: url('images/persons/dope.jpeg')">
+                    <div class="overlay">
+                        
+                    </div>
+                    <div class="content">
+                        <div class="lineDope"></div>
+                        <h1>Med Amine Hamdouni</h1>
+                        <div class="parag">
+                            <h2>hamdouni.medamin@gmail.com</h2>
+                            <p>Lorem Ipsum Lorem Ipsum</p>
+                            
+                            <div class="icons">
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--===============================================================================================-->
+        <script src="vendor_ContactForm/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor_ContactForm/bootstrap/js/popper.js"></script>
+        <script src="vendor_ContactForm/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor_ContactForm/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor_ContactForm/tilt/tilt.jquery.min.js"></script>
+        <script >
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+    <!--===============================================================================================-->
+        <script src="js_ContactForm/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+    </script>
+
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="aos/init.js"></script>
+    <script src="js/topButtons.js"></script>
+    <script src="js/svgColor.js"></script>
+</body>
+</html>

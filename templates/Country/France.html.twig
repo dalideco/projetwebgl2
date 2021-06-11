@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummyyy</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/icecreamsStyle.css">
+
+</head>
+
+<body>
+
+<div class="slides_container spicy">
+    <div class="slides">
+        <input tabindex="-1" type="radio" id="trigger1" name="slider" checked autofocus />
+        <label for="trigger1"></label>
+
+        <div class="slide  ">
+            <div class="hovereffect ">
+                <div class="img1 img-responsive"></div>
+                <div class="overlay">
+
+                    <h2 class="title">Pates au poireau et champignons</h2>
+
+                    <button id="myBtn" href="myModal1">Receipt</button>
+                </div>
+                <!-- Modal  -->
+
+            </div>
+
+        </div>
+
+
+        <input  tabindex="-1" type="radio" id="trigger2" name="slider" />
+        <label for="trigger2"></label>
+
+        <div class="slide img2">
+            <div class="hovereffect ">
+
+                <div class="overlay">
+                    <h2 class="title">Pates au poireau et champignons</h2>
+                    <button id="myBtn" href="myModal2">Open Modal</button>
+                </div>
+                <!-- Modal  -->
+            </div>
+        </div>
+
+        <input tabindex="-1" type="radio" id="trigger3" name="slider" />
+        <label for="trigger3"></label>
+        <div class="slide img3">
+            <div class="hovereffect">
+                <div class="overlay">
+                    <h2 class="title">Croissant</h2>
+                    <button id="myBtn" href="myModal3">Open Modal</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slide img4">
+            <div class="hovereffect">
+                <div class="overlay">
+                    <h2 class="title">Crepes</h2>
+                    <button id="myBtn" href="myModal4">Open Modal</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <input type="radio" id="trigger4" name="slider"
+         checked autofocus/> -->
+        <!-- <label for="trigger4"></label> -->
+
+        <!-- PUT MODALS HERE -->
+
+
+
+        <div id="myModal1" class="modal">
+            <div class="modal-content">
+
+                <span class="close">&times;</span>
+                <div class="fade">
+
+
+
+                    <div class="ingred">
+                        <h1 class="smalltitle sticky ">Ingredients</h1>
+                        <h2>For 2 people</h2>
+
+                        <p>leek</p>
+                        <p>180g mushrooms</p>
+                        <p>2 cloves garlic</p>
+                        <p>20g stale bread, cut into small pieces</p>
+                        <p>200g of pasta</p>
+                        <p> 40g parmesan</p>
+                        <p> Olive oil</p>
+                        <p>Salt pepper</p>
+                        <p>Parsley</p>
+
+                    </div>
+                    <h1 class="smalltitle sticky">Receipe</h1>
+                    <p>
+                        Clean the mushrooms then slice them. Wash then mince the leek. Peel and mince the garlic cloves. Reserve. </p>
+
+                    <p>In a frying pan, pour a drizzle of olive oil then brown the stale bread for a few minutes until it is golden brown. Salt then set aside. </p>
+
+                    <p>Pour 2 tablespoons of olive oil in a pan and brown the garlic for 2 minutes. Add the mushrooms, then the leek and cook for ten minutes over medium heat while stirring. Meanwhile, immerse the pasta in 2 liters of salted water brought
+                        to a boil and cook according to the instructions on the package. Remember to keep the pasta cooking water. </p>
+
+                    <p>Pour a glass of pasta cooking water over the mushroom - leek mixture then add the Parmesan. Cook for another 5 minutes. Season with salt and pepper. </p>
+
+                    <p>Once cooked, pour the pasta into the pan with a little cooking water and mix well.
+
+                    <p>Serve the pasta on plates, sprinkle with coarsely chopped flat-leaf parsley, bread croutons and Parmesan cheese.
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal2" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal3">
+            <div class="modal-content"><span class="close">&times;</span>
+                <p>third modal</p>
+            </div>
+        </div>
+        <div class="modal" id="myModal4">
+            <div class="modal-content"><span class="close">&times;</span>
+                <p>forth modal</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<div class="buttons">
+    <div id="icecream">
+        <div class="svg">
+
+            {% include "icecream.html.twig"%}
+             </div>
+
+    </div>
+</div>
+
+<div class="slides_container sweets">
+    <div class="slides">
+        <input type="radio" id="trigger12" name="slider" />
+        <label for="trigger12"></label>
+
+        <div class="slide">
+            <div class="hovereffect ">
+                <div class="img12 img-responsive"></div>
+                <div class="overlay">
+
+                    <h2 class="title">Pates au poireau et champignons</h2>
+
+                    <button id="myBtn" href="myModal1">Receipt</button>
+                </div>
+                <!-- Modal  -->
+
+            </div>
+
+        </div>
+
+
+        <input type="radio" id="trigger22" name="slider" />
+        <label for="trigger22"></label>
+
+        <div class="slide img22">
+            <div class="hovereffect ">
+
+                <div class="overlay">
+                    <h2 class="title">Pates au poireau et champignons</h2>
+                    <button id="myBtn" href="myModal2">Open Modal</button>
+                </div>
+                <!-- Modal  -->
+            </div>
+        </div>
+
+        <input type="radio" id="trigger32" name="slider" />
+        <label for="trigger32"></label>
+        <div class="slide img32">
+            <div class="hovereffect">
+                <div class="overlay">
+                    <h2 class="title">Croissant</h2>
+                    <button id="myBtn" href="myModal3">Open Modal</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slide img4">
+            <div class="hovereffect">
+                <div class="overlay">
+                    <h2 class="title">Crepes</h2>
+                    <button id="myBtn" href="myModal4">Open Modal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
+    <script src="app.js"></script>
+    <script src="icecreamLayer.js"></script>
+</div>
+</body>
+
+
+</html>

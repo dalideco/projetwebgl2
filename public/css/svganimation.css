@@ -1,0 +1,55 @@
+.liSvg svg{
+    margin-right: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.my-container >svg{
+    
+    width: 650px;
+    /* height:650px; */
+    overflow-y:  visible !important;
+    padding: 30px 0;
+    box-sizing:border-box;
+    
+}
+#undraw_cooking_lyxy{
+    overflow: visible;
+}
+
+#spoon{
+    animation : topandbottom 1s ease-in-out alternate infinite;
+    transform: translateY(30px);
+}
+
+#fork{
+    animation: forkanimation 1s ease-in-out alternate infinite;
+}
+
+#left, #right{
+    animation: play 1s ease-in-out alternate infinite;
+    transform-origin: bottom;
+    transform-box:fill-box;
+    transform: rotate(-10deg);
+
+}
+
+
+@keyframes play{
+    100%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes topandbottom{
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes forkanimation{
+    100%{
+        transform: translateX(15px) translateY(30px);
+    }
+}
+
