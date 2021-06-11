@@ -178,7 +178,7 @@ nav:hover ul{
     display:flex;
     align-items: center;
     justify-content:center;
-    background-image: url('images_AboutUs/cubes.png')
+    background-image: url('/images_AboutUs/cubes.png')
 }
 
 .myMap .my-container {
@@ -303,7 +303,7 @@ nav:hover ul{
     min-height: 100vh ; 
     width: 100%; 
     background-color: var(--myWhite);
-    background-image: url("images_AboutUs/cubes.png");
+    background-image: url("/images_AboutUs/cubes.png");
     position: relative;
     
 }

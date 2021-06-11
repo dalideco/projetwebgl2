@@ -5,7 +5,7 @@ const liTable = document.querySelectorAll('.myMap ul li');
 
 const colorDict=['rgba(233, 27, 27,1)','rgba(26, 104, 238, 1)','rgba(204, 201, 34, 1)']
 
-const vectorSelectors= ['#Vector_6','#Vector_7','#Vector_36','#Vector_37','#Vector_26','#Vector_27']
+const vectorSelectors= ['#Vector_6','#Vector_7','#Vector_26','#Vector_27','#Vector_25','#Vector_15','#Vector_16','#Vector_44']
 
 const vectors = vectorSelectors.map(Sell=> document.querySelector(Sell));
 
