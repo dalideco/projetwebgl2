@@ -31,7 +31,7 @@
 
 
 
-            <div class="slide img2" style={{"background-image: url('"~recipe.url~"')"}}>
+            <div class="slide img2" style="background-image: url('{{recipe.url}}')">
                 <div class="hovereffect ">
 
                     <div class="overlay">
@@ -183,7 +183,34 @@
 
 <div class="slides_container sweets">
     <div class="slides">
-        <input type="radio" id="trigger12" name="slider" />
+
+        {% for recipe in spicy %}
+
+            {% if loop.first %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider" checked autofocus  />
+                <label for={{"trigger"~loop.index}}></label>
+            {% endif %}
+
+            {% if not loop.last and not loop.first %}
+            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider"   />
+            <label for={{"trigger"~loop.index}}></label>
+            {% endif %}
+
+
+
+            <div class="slide img2" style="background-image: url('{{recipe.url}}')">
+                <div class="hovereffect ">
+
+                    <div class="overlay">
+                        <h2 class="title">Pates au poireau et champignons</h2>
+                        <button id="myBtn" href="myModal2">Open Modal</button>
+                    </div>
+                    <!-- Modal  -->
+                </div>
+            </div>
+        {% endfor %}    
+
+        {# <input type="radio" id="trigger12" name="slider" />
         <label for="trigger12"></label>
 
         <div class="slide">
@@ -235,7 +262,7 @@
                     <button id="myBtn" href="myModal4">Open Modal</button>
                 </div>
             </div>
-        </div>
+        </div> #}
     </div>
 
     <script src="modal.js"></script>
