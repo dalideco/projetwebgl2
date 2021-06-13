@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {{ food.title }}
+    </title>
+
+    <link rel="stylesheet" href="/css/recipe.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="image"
+        style="background-image: url('/{{ food.url }}');"
+      ></div>
+      <div class="recette">
+        <div class="mycheckbox">
+          <input type="checkbox" name="" id="favorite" />
+          <div class="mystar">
+              
+          </div>
+        </div>
+        <div>
+          <h1>
+            {{ food.title }}
+          </h1>
+        </div>
+        <hr />
+        <div class="ingredients">
+          <h3>Ingredients</h3>
+          <p>{{ food.ingredients }}</p>
+        </div>
+        <hr />
+        <div class="recipe">
+          <h3>recipe</h3>
+          <p>
+            {{ food.receipt }}
+          </p>
+        </div>
+        <hr />
+
+        <form action="/postcomment" method="post">
+          <div>
+            <label for="grade">Grade : </label>
+            <input
+              id="grade"
+              type="number"
+              min="1"
+              max="5"
+              name="grade"
+              required
+            />
+          </div>
+          <div>
+            <label for="comment">Comment : </label>
+            <input id="comment" type="text" name="comment" />
+          </div>
+          <input type="hidden" name="id" value="{{ food.id }}" />
+          <button type="submit">Submit</button>
+        </form>
+        <br />
+        <h2>Other Comments:</h2>
+        <br />
+        <div class="comments">
+          <!-- loop through database comments in here      -->
+          {% for vote in votes %}
+          <div class="comment">
+            <p>{{ vote.comment }}</p>
+            <p>grade: {{ vote.grade }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </div>
+  </body>
+</html>

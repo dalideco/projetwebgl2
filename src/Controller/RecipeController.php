@@ -17,9 +17,11 @@ class RecipeController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Recipes::class);
 
         $spicy = $repo->findBy(["country"=>"france","isSweet"=>false]);
+        $sweet = $repo->findBy(["country"=>"france","isSweet"=>true]);
 
         return $this->render('country/France.html.twig',[
-                'spicy' =>$spicy
+                'spicy' =>$spicy,
+                'sweet' => $sweet
         ]);
     }
 
@@ -36,7 +38,7 @@ class RecipeController extends AbstractController
             $recipe->setReceipt("this is a receipt");
             $recipe->setUrl('ImagesFood/pic'.(($i%5)+4).'.jpg');
             $recipe->setCountry("france");
-            $recipe->setIsSweet(false);
+            $recipe->setIsSweet(true);
             $recipe->setUserId($admin);
 
 

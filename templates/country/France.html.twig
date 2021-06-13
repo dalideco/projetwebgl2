@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yummyyy</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href   ="css/icecreamsStyle.css">
+    <link rel="stylesheet" href="css/icecreamsStyle.css">
 
 </head>
 
@@ -31,78 +31,48 @@
 
 
 
-            <div class="slide img2" style="background-image: url('{{recipe.url}}')">
+            <div class="slide" style="background-image: url({{asset(recipe.url)}}">
                 <div class="hovereffect ">
 
                     <div class="overlay">
                         <h2 class="title">Pates au poireau et champignons</h2>
-                        <button id="myBtn" href="myModal2">Open Modal</button>
+                        <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
                     </div>
-                    <!-- Modal  -->
+
                 </div>
             </div>
         {% endfor %}    
 
-        {# <input tabindex="-1" type="radio" id="trigger1" name="slider" checked autofocus />
-        <label for="trigger1"></label>
 
-        <div class="slide  ">
-            <div class="hovereffect ">
-                <div class="img1 img-responsive" style="background-image: url('ImagesFood/pic4.jpg');"></div>
-                <div class="overlay">
+    <div class="slides_container sweets">
+    <div class="slides">
 
-                    <h2 class="title">Pates au poireau et champignons</h2>
+        {% for recipe in sweet %}
 
-                    <button id="myBtn" href="myModal1">Receipt</button>
-                </div>
-                <!-- Modal  -->
+            {% if loop.first %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider" checked autofocus  />
+                <label for={{"trigger"~loop.index~22}}></label>
+            {% endif %}
 
-            </div>
-
-        </div>
+            {% if not loop.last and not loop.first %}
+            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"   />
+            <label for={{"trigger"~loop.index~22}}></label>
+            {% endif %}
 
 
-        <input  tabindex="-1" type="radio" id="trigger2" name="slider" />
-        <label for="trigger2"></label>
 
-        <div class="slide img2">
-            <div class="hovereffect ">
+            <div class="slide" style="background-image: url({{asset(recipe.url)}}">
+                <div class="hovereffect ">
 
-                <div class="overlay">
-                    <h2 class="title">Pates au poireau et champignons</h2>
-                    <button id="myBtn" href="myModal2">Open Modal</button>
-                </div>
-                <!-- Modal  -->
-            </div>
-        </div>
-
-        <input tabindex="-1" type="radio" id="trigger3" name="slider" />
-        <label for="trigger3"></label>
-        <div class="slide img3">
-            <div class="hovereffect">
-                <div class="overlay">
-                    <h2 class="title">Croissant</h2>
-                    <button id="myBtn" href="myModal3">Open Modal</button>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="slide img4">
-            <div class="hovereffect">
-                <div class="overlay">
-                    <h2 class="title">Crepes</h2>
-                    <button id="myBtn" href="myModal4">Open Modal</button>
+                    <div class="overlay">
+                        <h2 class="title">Pates au poireau et champignons</h2>
+                        <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
+                    </div>
+                    <!-- Modal  -->
                 </div>
             </div>
-        </div> #}
+        {% endfor %}
 
-
-        <!-- <input type="radio" id="trigger4" name="slider"
-         checked autofocus/> -->
-        <!-- <label for="trigger4"></label> -->
-
-        <!-- PUT MODALS HERE -->
 
 
 
@@ -181,89 +151,6 @@
     </div>
 </div>
 
-<div class="slides_container sweets">
-    <div class="slides">
-
-        {% for recipe in spicy %}
-
-            {% if loop.first %}
-                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider" checked autofocus  />
-                <label for={{"trigger"~loop.index}}></label>
-            {% endif %}
-
-            {% if not loop.last and not loop.first %}
-            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider"   />
-            <label for={{"trigger"~loop.index}}></label>
-            {% endif %}
-
-
-
-            <div class="slide img2" style="background-image: url('{{recipe.url}}')">
-                <div class="hovereffect ">
-
-                    <div class="overlay">
-                        <h2 class="title">Pates au poireau et champignons</h2>
-                        <button id="myBtn" href="myModal2">Open Modal</button>
-                    </div>
-                    <!-- Modal  -->
-                </div>
-            </div>
-        {% endfor %}    
-
-        {# <input type="radio" id="trigger12" name="slider" />
-        <label for="trigger12"></label>
-
-        <div class="slide">
-            <div class="hovereffect ">
-                <div class="img12 img-responsive"></div>
-                <div class="overlay">
-
-                    <h2 class="title">Pates au poireau et champignons</h2>
-
-                    <button id="myBtn" href="myModal1">Receipt</button>
-                </div>
-                <!-- Modal  -->
-
-            </div>
-
-        </div>
-
-
-        <input type="radio" id="trigger22" name="slider" />
-        <label for="trigger22"></label>
-
-        <div class="slide img22">
-            <div class="hovereffect ">
-
-                <div class="overlay">
-                    <h2 class="title">Pates au poireau et champignons</h2>
-                    <button id="myBtn" href="myModal2">Open Modal</button>
-                </div>
-                <!-- Modal  -->
-            </div>
-        </div>
-
-        <input type="radio" id="trigger32" name="slider" />
-        <label for="trigger32"></label>
-        <div class="slide img32">
-            <div class="hovereffect">
-                <div class="overlay">
-                    <h2 class="title">Croissant</h2>
-                    <button id="myBtn" href="myModal3">Open Modal</button>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="slide img4">
-            <div class="hovereffect">
-                <div class="overlay">
-                    <h2 class="title">Crepes</h2>
-                    <button id="myBtn" href="myModal4">Open Modal</button>
-                </div>
-            </div>
-        </div> #}
-    </div>
 
     <script src="modal.js"></script>
     <script src="app.js"></script>

@@ -1,0 +1,88 @@
+*{
+    margin: 0 ; 
+    padding: 0; 
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em ;
+    background: rgb(21, 190, 21);
+    color: white;
+}
+
+form input{
+    padding: 10px; 
+    border-radius: 10px;
+}
+form input[type="text"] {
+    display: block;
+    width: 100%;
+}
+
+hr{
+    margin: 20px 20px;
+}
+
+.container{
+    display: flex; 
+    height: 100vh;
+    
+}
+
+.container> .image {
+    background-size: cover ;
+    flex: 1 1 400px;
+}
+.container > .recette{
+    flex: 1 0 400px; 
+    display: flex; 
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 4rem 0 ; 
+    overflow-y: auto;
+}
+.container > .recette>*{
+    width: 70%;
+    margin:auto; 
+}
+
+.recette::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .recette::-webkit-scrollbar-track {
+    background: rgb(5, 47, 5);
+  }
+  
+  /* Handle */
+  .recette::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  .recette::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+.container > .recette > form {
+    display: flex;
+    flex-direction: column;
+}
+.comments > .comment {
+     display: flex; 
+     justify-content: space-between; 
+     padding: 20px 0 ; 
+     border-bottom: 1px solid white;
+}
+.comments > .comment:first-of-type{
+    border-top: 1px solid white;
+}
+
+.mystart{
+    width: 50px; height: 50px; 
+    background: red;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
