@@ -14,12 +14,14 @@
         style="background-image: url('/{{ food.url }}');"
       ></div>
       <div class="recette">
-        <div class="mycheckbox">
-          <input type="checkbox" name="" id="favorite" />
+        <form class="mycheckbox" method="POST" action="/handlecheck">
+          <input type="checkbox" name="checked" id="favorite" {% if isFavorite %} checked {% endif %} />
+          
           <div class="mystar">
-              
           </div>
-        </div>
+          <input type="hidden" name="id" value="{{food.id}}">
+        </form>
+        
         <div>
           <h1>
             {{ food.title }}
@@ -71,7 +73,14 @@
           {% endfor %}
         </div>
       </div>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script >
+        const checkbox = document.querySelector('#favorite');
+        const form = document.querySelector('form.mycheckbox')
+        checkbox.addEventListener('change',()=>{
+          form.submit();
+        })
+      </script>
+      
     </div>
   </body>
 </html>

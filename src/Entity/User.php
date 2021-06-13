@@ -34,9 +34,20 @@ class User
      */
     private $votes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Recipes::class, inversedBy="users")
+     */
+    private $favorites;
+
+    
+
+    
+
     public function __construct()
     {
         $this->votes = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
+        $this->favorite = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -102,4 +113,30 @@ class User
     {
         return $this->id;
     }
+
+    /**
+     * @return Collection|Recipes[]
+     */
+    public function getFavorites(): Collection
+    {
+        return $this->favorites;
+    }
+
+    public function addFavorite(Recipes $favorite): self
+    {
+        if (!$this->favorites->contains($favorite)) {
+            $this->favorites[] = $favorite;
+        }
+
+        return $this;
+    }
+
+    public function removeFavorite(Recipes $favorite): self
+    {
+        $this->favorites->removeElement($favorite);
+
+        return $this;
+    }
+
+    
 }

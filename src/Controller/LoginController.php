@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use App\Entity\Recipes;
 use App\Entity\Vote;
 
+
 class LoginController extends AbstractController
 {
 
@@ -118,20 +119,73 @@ class LoginController extends AbstractController
         return $this->redirectToRoute('home');
     }
 
+
+
+
+
     #[Route('/recipe/{id}', name: 'recipe')]
     public function recipe($id): Response
     {
-        $repo = $this->getDoctrine()->getRepository(Recipes::class);
+        
+        $userId = $this->session->get('id');
 
+        $recipeRepo = $this->getDoctrine()->getRepository(Recipes::class);
+        $userRepo = $this->getDoctrine()->getRepository(User::class);
 
-        $search = $repo->find($id);
+        $recipe = $recipeRepo->find($id);
         $votes = $this->getDoctrine()->getRepository(Vote::class)->findBy(['receipt'=>$id]);
 
+        if($userId == -1 || $userId == null){
+            $isFavorite = false;
+        }else{
+            $user = $userRepo->find($userId);
+            $isFavorite= $user->getFavorites()->contains($recipe);
+        }
         return $this->render('recipe/recipe.html.twig', [
-            'food' => $search,
-            'votes' =>$votes
+            'food' => $recipe,
+            'votes' =>$votes,
+            'isFavorite'=>$isFavorite
         ]);
     }
+
+
+    #[Route('/handlecheck', name: 'hanldecheck',methods:['POST'])]
+    public function handlecheck(Request $request): Response
+    {
+        $checked = $request->request->get('checked');
+
+
+        $userId = $this->session->get('id');
+        $recipeId = $request->request->get('id');
+
+        if($userId == -1 || $userId == null)
+            return $this->redirectToRoute('login',['error'=>'login required']);
+        
+
+        $manager = $this->getDoctrine()->getManager();
+        $userRepo = $this->getDoctrine()->getRepository(User::class);
+        $recipeRepo = $this->getDoctrine()->getRepository(Recipes::class);
+
+        $user = $userRepo->find($userId);
+        $recipe = $recipeRepo->find($recipeId);  
+        
+
+        if($checked)
+            $user->addFavorite($recipe);
+        else
+            $user->removeFavorite($recipe);
+
+
+        $manager->flush();
+        
+
+        return $this->redirect('recipe/1');
+    }
+
+
+
+
+
 
     #[Route('/postcomment', name: 'postcomment', methods: ['POST'])]
     public function commenting(Request $request): Response
