@@ -7,7 +7,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6em ;
-    background: rgb(21, 190, 21);
+    background: rgb(10, 47, 4);
     color: white;
 }
 
@@ -117,4 +117,34 @@ hr{
 }
 .mycheckbox input#favorite[type="checkbox"]:checked + .mystar::after{
     background:rgb(143, 143, 5);
+}
+
+.comment-part{
+    display:flex;
+}
+.comment-part>input {
+    flex: 1 ;
+}
+.comment-part> button {
+    padding: 0 20px;
+}
+
+input:focus{
+    outline: none;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.46); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.7);
+}
+
+@media(max-width: 500px){
+    .container{
+        display:block;
+        height: auto ;
+    }
+    .container > .image{
+        height: 90vh ;
+        background-attachment: fixed;
+    }
+    .container> .recetter >* {
+        margin:0 8px;
+    }
 }

@@ -8,93 +8,98 @@
     <title>Yummyyy</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/icecreamsStyle.css">
+    <link rel="stylesheet" href="/css/gotohome.css">
 
 </head>
 
 <body>
 
-<div class="slides_container spicy">
-    <div class="slides">
+    <div class="slides_container spicy">
+        <div class="slides">
 
 
-        {% for recipe in spicy %}
+            {% for recipe in spicy %}
 
-            {% if loop.first %}
-                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider" checked autofocus  />
+                {% if loop.first %}
+                    <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider" checked autofocus  />
+                    <label for={{"trigger"~loop.index}}></label>
+                {% endif %}
+
+                {% if not loop.last and not loop.first %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider"   />
                 <label for={{"trigger"~loop.index}}></label>
-            {% endif %}
-
-            {% if not loop.last and not loop.first %}
-            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index}} name="slider"   />
-            <label for={{"trigger"~loop.index}}></label>
-            {% endif %}
+                {% endif %}
 
 
 
-            <div class="slide" style="background-image: url({{asset(recipe.url)}}">
-                <div class="hovereffect ">
+                <div class="slide" style="background-image: url({{asset(recipe.url)}}">
+                    <div class="hovereffect ">
 
-                    <div class="overlay">
-                        <h2 class="title">Pates au poireau et champignons</h2>
-                        <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
+                        <div class="overlay">
+                            <h2 class="title">Pates au poireau et champignons</h2>
+                            <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-        {% endfor %}    
+            {% endfor %}    
+        </div>
     </div>
-</div>
 
-<div class="slides_container sweets">
-    <div class="slides">
+    <div class="slides_container sweets">
+        <div class="slides">
 
-        {% for recipe in sweet %}
+            {% for recipe in sweet %}
 
-            {% if loop.first %}
-                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"  />
+                {% if loop.first %}
+                    <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"  />
+                    <label for={{"trigger"~loop.index~22}}></label>
+                {% endif %}
+
+                {% if not loop.last and not loop.first %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"   />
                 <label for={{"trigger"~loop.index~22}}></label>
-            {% endif %}
-
-            {% if not loop.last and not loop.first %}
-            <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"   />
-            <label for={{"trigger"~loop.index~22}}></label>
-            {% endif %}
+                {% endif %}
 
 
 
-            <div class="slide" style="background-image: url({{asset(recipe.url)}}">
-                <div class="hovereffect ">
+                <div class="slide" style="background-image: url({{asset(recipe.url)}}">
+                    <div class="hovereffect ">
 
-                    <div class="overlay">
-                        <h2 class="title">Pates au poireau et champignons</h2>
-                        <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
+                        <div class="overlay">
+                            <h2 class="title">Pates au poireau et champignons</h2>
+                            <a id="myBtn" href="/recipe/{{recipe.id}}">Open Modal</a>
+                        </div>
+                        <!-- Modal  -->
                     </div>
-                    <!-- Modal  -->
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+
+
+        </div>
 
 
     </div>
 
+    <div class="buttons">
+        <div id="icecream">
+            <div class="svg">
 
-</div>
+                {% include "country/icecream.html.twig"%}
+                </div>
 
-<div class="buttons">
-    <div id="icecream">
-        <div class="svg">
-
-            {% include "country/icecream.html.twig"%}
-             </div>
-
+        </div>
     </div>
-</div>
 
 
-    <script src="/modal.js"></script>
-    <script src="/app.js"></script>
+    
+
+    <a href="/home" class="gotohome">x</a>
+
+    
+    {# <script src="/app.js"></script> #}
     <script src="/js/recipes.js"></script>
-</div>
+
 </body>
 
 

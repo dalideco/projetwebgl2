@@ -6,6 +6,14 @@
     </title>
 
     <link rel="stylesheet" href="/css/recipe.css" />
+    <link rel="stylesheet" href="/css/gotohome.css">
+    <style>
+      a.gotohome{
+        padding: 8px 14px;
+        left: 10px ; 
+        right: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -55,10 +63,13 @@
           </div>
           <div>
             <label for="comment">Comment : </label>
-            <input id="comment" type="text" name="comment" />
+            <div class="comment-part">
+              <input id="comment" type="text" name="comment"  />
+              <button type="submit">Submit</button>
+            </div>
           </div>
           <input type="hidden" name="id" value="{{ food.id }}" />
-          <button type="submit">Submit</button>
+          
         </form>
         <br />
         <h2>Other Comments:</h2>
@@ -73,6 +84,9 @@
           {% endfor %}
         </div>
       </div>
+
+      
+
       <script >
         const checkbox = document.querySelector('#favorite');
         const form = document.querySelector('form.mycheckbox')
@@ -82,5 +96,7 @@
       </script>
       
     </div>
+    <a href="/country/{{food.country}}" class="gotohome">x</a>
+
   </body>
 </html>
