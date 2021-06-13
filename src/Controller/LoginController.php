@@ -218,4 +218,21 @@ class LoginController extends AbstractController
 
         return $this->redirect('/recipe/'.$recipeId);
     }
+
+
+    #[Route('/favorites', name: 'favorites')]
+    public function favorites() : Response
+    {
+        $userId = $this->session->get('id');
+        $userRepo = $this->getDoctrine()->getRepository(User::class); 
+        $user = $userRepo->find($userId);
+
+        $favorites = $user->getFavorites();
+        
+        
+
+        return $this->render('favorite/favorites.html.twig',[
+            'favorites'=>$favorites
+        ]);
+    }
 }

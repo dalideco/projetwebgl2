@@ -1,24 +1,41 @@
 
 const button = document.querySelector(".buttons");
 let sweets = false;
-
-console.log(button);
 const firstinput = document.querySelector("#trigger1");
-console.log(firstinput);
+const input = document.querySelector('.slides_container.spicy input:last-of-type');
+console.log(input);
+
 // @ts-ignore
 firstinput.onchange=() => {
-    console.log(firstinput);
+    
     // @ts-ignore
     if (firstinput.checked===true){
-        console.log("checked");
+        
         document.body.scrollTo({
             top: 0,
             left: 0,
             behavior: "smooth"
         });
     }
-
 }
+
+// @ts-ignore
+input.onchange=() => {
+    
+    // @ts-ignore
+    if (input.checked===true){
+        
+        document.body.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+}
+
+
+
+console.log()
 
 button.addEventListener("click", () => {
 
@@ -32,7 +49,7 @@ button.addEventListener("click", () => {
         behavior: "smooth"
     });
 
-    const myCheck = document.querySelector(`.${myclass} > .slides > input:last-of-type `)
+    const myCheck = document.querySelector(`.${myclass} > .slides > input:first-of-type `)
     console.log(myCheck);
     // @ts-ignore
     myCheck.checked = true;

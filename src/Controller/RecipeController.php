@@ -10,14 +10,14 @@ use App\Entity\User;
 
 class RecipeController extends AbstractController
 {
-    #[Route('/france', name: 'france')]
-    public function index(): Response
+    #[Route('/country/{country}', name: 'country')]
+    public function index($country): Response
     {
 
         $repo = $this->getDoctrine()->getRepository(Recipes::class);
 
-        $spicy = $repo->findBy(["country"=>"france","isSweet"=>false]);
-        $sweet = $repo->findBy(["country"=>"france","isSweet"=>true]);
+        $spicy = $repo->findBy(["country"=>$country,"isSweet"=>false]);
+        $sweet = $repo->findBy(["country"=>$country,"isSweet"=>true]);
 
         return $this->render('country/France.html.twig',[
                 'spicy' =>$spicy,
