@@ -3,6 +3,7 @@ const button = document.querySelector(".buttons");
 let sweets = false;
 const firstinput = document.querySelector("#trigger1");
 const input = document.querySelector('.slides_container.spicy input:last-of-type');
+const beforeinput = document.querySelector('.slides_container.spicy input:nth-last-of-type(2)');
 console.log(input);
 
 // @ts-ignore
@@ -24,6 +25,19 @@ input.onchange=() => {
     
     // @ts-ignore
     if (input.checked===true){
+        
+        document.body.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+}
+// @ts-ignore
+beforeinput.onchange=() => {
+    
+    // @ts-ignore
+    if (beforeinput.checked===true){
         
         document.body.scrollTo({
             top: 0,
