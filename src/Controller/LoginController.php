@@ -179,7 +179,7 @@ class LoginController extends AbstractController
         $manager->flush();
         
 
-        return $this->redirect('recipe/1');
+        return $this->redirect('recipe/'.$recipeId);
     }
 
 

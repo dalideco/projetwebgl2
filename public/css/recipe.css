@@ -44,7 +44,8 @@ hr{
     position: relative;
 }
 .container > .recette>*{
-    width: 70%;
+    width: 80%;
+    max-width: 500px;
     margin:auto; 
 
 }
@@ -87,7 +88,7 @@ hr{
 .mycheckbox{
     position: absolute; 
     top: 20px; right: 20px;
-    width: 40px! important; height: 40px;
+    width: 40px!important; height: 40px;
 }
 .mycheckbox #favorite{
     position: absolute;
@@ -99,7 +100,7 @@ hr{
 
 .mystar{
     position: absolute; top:0; left: 0 ;
-    width: 40px; height: 40px; 
+    width: 100%; height: 100%; 
     background: rgb(143, 143, 5);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     display:flex;justify-content: center; align-items: center;
@@ -109,7 +110,7 @@ hr{
     content:'';
     width: 60%; height: 60%; 
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    background: rgb(21, 190, 21);
+    background: rgb(10, 47, 4);
 }
 
 .mycheckbox #favorite:hover + .mystar::after{
@@ -135,7 +136,10 @@ input:focus{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.7);
 }
 
-@media(max-width: 500px){
+@media(max-width: 1000px){
+    html{
+        font-size: 40px;
+    }
     .container{
         display:block;
         height: auto ;
@@ -144,7 +148,17 @@ input:focus{
         height: 90vh ;
         background-attachment: fixed;
     }
-    .container> .recetter >* {
-        margin:0 8px;
+    .container> .recette >* {
+        margin:10px auto;
+        width: 100%;
+    }
+    .container> .recette input{
+        font-size: 1rem;
+    }
+    a.gotohome{
+        padding: 1px 22px !important;
+    }
+    .mycheckbox{
+        width: 80px!important; height: 80px;
     }
 }

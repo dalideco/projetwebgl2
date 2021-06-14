@@ -30,6 +30,11 @@
                 <label for={{"trigger"~loop.index}}></label>
                 {% endif %}
 
+                {% if  loop.last %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider" class="nondisplayed"  />
+                <label for={{"trigger"~loop.index~22}} class="nondisplayed"></label>
+                {% endif %}
+
 
 
                 <div class="slide" style="background-image: url({{asset(recipe.url)}}">
@@ -60,6 +65,14 @@
                 <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider"   />
                 <label for={{"trigger"~loop.index~22}}></label>
                 {% endif %}
+
+                {% if  loop.last %}
+                <input  tabindex="-1" type="radio" id={{"trigger"~loop.index~22}} name="slider" class="nondisplayed"  />
+                <label for={{"trigger"~loop.index~22}} class="nondisplayed"></label>
+                {% endif %}
+
+                
+
 
 
 

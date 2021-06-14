@@ -398,19 +398,16 @@
   transform: scale(1.2);
   
 } */
+
+.nondisplayed{
+    display:none;
+}
     
-    .img12 {
-        background-image: url(../../../../../Users/hp/Desktop/Web/The_Foodies_Website/pics/pic3.jpg);
+@media(max-width: 1000px){
+    .slide{
+        width: 100%;
     }
-    
-    .img22 {
-        background-image: url(../../../../../Users/hp/Desktop/Web/The_Foodies_Website/pics/pic3.jpg);
+    .nondisplayed{
+        display:inline-block;
     }
-    
-    .img32 {
-        background-image: url(../../../../../Users/hp/Desktop/Web/The_Foodies_Website/pics/pic5.jpg);
-    }
-    
-    .img42 {
-        background-image: url(../../../../../Users/hp/Desktop/Web/The_Foodies_Website/pics/pic7.jpg);
-    }
+}
